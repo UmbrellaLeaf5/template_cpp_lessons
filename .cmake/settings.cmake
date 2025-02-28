@@ -27,7 +27,7 @@ find_library(${LIB_NAME} ../)
 # Set language settings
 if("CXX" IN_LIST REPO_LANGUAGES)
   set(CMAKE_CXX_STANDARD_REQUIRED ON)
-  set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic -std=c++${CMAKE_CXX_STANDARD} -O2")
+  string(REPLACE ";" " " CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
   # less speed, more warnings = less potential errors in code (?)
   # set(CMAKE_CXX_FLAGS " -Wall -Wextra -pedantic -std=c++23 -O2 -Wfloat-equal -Wconversion -Wlogical-op -Wduplicated-cond")
@@ -36,7 +36,7 @@ endif()
 
 if("C" IN_LIST REPO_LANGUAGES)
   set(CMAKE_C_STANDARD_REQUIRED ON)
-  set(CMAKE_C_FLAGS "-Wall -Wextra -Wpedantic -std=c${CMAKE_C_STANDARD} -O2")
+  string(REPLACE ";" " " CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
 endif()
 
 # Functions
