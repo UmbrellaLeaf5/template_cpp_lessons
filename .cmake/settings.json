@@ -28,7 +28,10 @@
     "*.c"
   ],
   "LIB_NAME": "lib",
-  "LESSON_PREFIX": "lesson_",
+  "LESSON_PREFIXES": [
+    "lesson_",
+    "homework_"
+  ],
   "TASK_PREFIXES": [
     "task_",
     "example_"

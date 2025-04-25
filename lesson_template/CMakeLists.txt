@@ -2,13 +2,13 @@
 
 include(${REPO_FOLDER}/settings.cmake)
 
-# Libraries
+# MARK: Libraries
 
 # find_package()
 # add_library()
 set(GLOBAL_LIBS)
 
-# Add executable
+# MARK: Add executable
 file(GLOB_RECURSE SUBDIRS LIST_DIRECTORIES true ".")
 
 string(REPLACE ";" "|" PREFIX "${TASK_PREFIXES}")
@@ -45,5 +45,5 @@ foreach(SUBDIR ${SUBDIRS})
   endif()
 endforeach()
 
-# For this project
+# MARK: Extra (for this project only)
 CopyExtraFiles({})
